@@ -9,7 +9,12 @@
 ## Setup and preparation:
 - [Download the ZIP file of the master branch to your PC](https://github.com/DerRobert-28/YtDownload28/archive/refs/heads/master.zip).
 - Copy the folder inside the ZIP file whereever you want to; e.g. onto the Desktop.
-- Inside the folder (where you can see the `YtDownload.cmd` and the `YtDownload.py` files), create a folder named `Downloads`.
+- Inside the folder following files should me visible:
+  - `Downloads` folder
+  - `LICENCE` file
+  - `README.md` file
+  - `YtDownload.cmd` file
+  - `YtDownload.py` file
 - Done.
 
 ## Execution:
