@@ -2,8 +2,12 @@
  mode con cols=80 lines=25
  color f0
  title Youtube Downloader
- if not exist .\Downloads goto DOWNLOADS
- if not exist .\YtDownload.py goto PYTHON
+ md Downloads
+ echo import youtube_dl >YtDownload.py
+ echo url = input() >>YtDownload.py
+ echo ydl_opts = {'outtmpl': './Downloads/%%(title)s.%%(ext)s' } >>YtDownload.py
+ echo with youtube_dl.YoutubeDL(ydl_opts) as ydl: >>YtDownload.py
+ echo     ydl.download([url])  >>YtDownload.py
 :LOOP
  cls
  echo.
@@ -18,14 +22,14 @@
  pause >nul
  goto LOOP
 :DOWNLOADS
- md .\Downloads
- echo. >.\Downloads\.DOWNLOAD.FOLDER
+ md Downloads
+ echo.>Downloads\.DOWNLOAD.FOLDER
  goto LOOP
 :PYTHON
- echo import youtube_dl >.\YtDownload.py
- echo url = input() >>.\YtDownload.py
- echo ydl_opts = {'outtmpl': './Downloads/%%(title)s.%%(ext)s' } >>.\YtDownload.py
- echo with youtube_dl.YoutubeDL(ydl_opts) as ydl: >>.\YtDownload.py
- echo     ydl.download([url])  >>.\YtDownload.py
+ echo import youtube_dl >YtDownload.py
+ echo url = input() >>YtDownload.py
+ echo ydl_opts = {'outtmpl': './Downloads/%%(title)s.%%(ext)s' } >>YtDownload.py
+ echo with youtube_dl.YoutubeDL(ydl_opts) as ydl: >>YtDownload.py
+ echo     ydl.download([url])  >>YtDownload.py
  goto LOOP
 :END
